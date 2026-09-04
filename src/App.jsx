@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import './components/ProductList/ProductList.jsx'
 
 export default function App(){
   const [products, setProducts] = [
@@ -75,6 +76,8 @@ export default function App(){
     }
   ];
   return (
-    <div></div>
+    <div>
+      <ProductList products={products}/>
+    </div>
   )
 }
