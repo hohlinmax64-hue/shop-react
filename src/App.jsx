@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
+import ProductList from "./components/ProductList.jsx";
 
 export default function App(){
-  const [products, setProducts] = [
+  const [products, setProducts] = useState([
     {
         id: 1,
         img: '',
@@ -73,8 +74,10 @@ export default function App(){
         rating: 4.9,
         stock: 7
     }
-  ];
+  ])
   return (
-    <div></div>
+    <div>
+      <ProductList products={products}/>
+    </div>
   )
 }
