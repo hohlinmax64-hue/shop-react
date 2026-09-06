@@ -1,13 +1,19 @@
-import { useState, useEffect } from "react"
+import { Routes, Route } from 'react-router-dom'
+import Header from "./components/Header.jsx";
 import ProductList from "./components/ProductList.jsx";
+import Home from './pages/Home.jsx'
+import Cart from './pages/Cart.jsx'
+import Favorites from './pages/Favorites.jsx'
+import './index.css'
+
+import { useState, useEffect } from "react"
+
 import nikeImg from './assets/img/nike.jpg'
 import samsungImg from './assets/img/samsung.jpg'
 import jackeImg from './assets/img/theNothFace.jpg'
 import airPodsImg from './assets/img/airpods.jpg'
 import jeansImg from './assets/img/Jeans.jpg'
 import laptopImg from './assets/img/macbook.jpg'
-import './index.css'
-
 
 export default function App(){
   const [products, setProducts] = useState([
@@ -85,8 +91,14 @@ export default function App(){
   ])
   
   return (
-    <div>
-      <ProductList products={products}/>
-    </div>
+    <>
+      <Header />
+
+    <Routes>
+      <Route path='/' element={<Home products={products} />}/>
+      <Route path='/Cart' element={<Cart />}/>
+      <Route path='/Favorites' element={<Favorites />}/>
+    </Routes> 
+    </>
   )
 }
