@@ -6,6 +6,7 @@ import jackeImg from './assets/img/theNothFace.jpg'
 import airPodsImg from './assets/img/airpods.jpg'
 import jeansImg from './assets/img/Jeans.jpg'
 import laptopImg from './assets/img/macbook.jpg'
+import './index.css'
 
 
 export default function App(){
@@ -37,7 +38,7 @@ export default function App(){
     {
         id: 3,
         img: jackeImg,
-        title: 'The North Face 800 Jacket',
+        title: 'The North Face 800',
         price: 400,
         desc: 'Тёплая зимняя куртка The North Face с утеплителем 800-fill. Отличный вариант для холодной и влажной погоды.',
         category: 'Clothing',
@@ -63,7 +64,7 @@ export default function App(){
         img: jeansImg,
         title: 'Levi’s 501 Jeans',
         price: 160,
-        desc: 'Классические джинсы Levi’s 501 с прямым кроем. Универсальная модель для повседневного образа.',
+        desc: 'Классические джинсы Levi’s 501 с прямым кроем. Универсальная модель джинс для повседневного стильного образа.',
         category: 'Clothing',
         brand: 'Levi’s',
         rating: 4.5,
