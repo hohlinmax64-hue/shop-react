@@ -5,7 +5,7 @@ export default function App(){
   const [products, setProducts] = useState([
     {
         id: 1,
-        img: '',
+        img: './assets/img/nike.jpg',
         title: 'Nike P-6000',
         price: 120,
         desc: 'Стильные и удобные кроссовки Nike P-6000 с ретро-дизайном. Подходят для повседневной носки и активного образа жизни.',
@@ -17,7 +17,7 @@ export default function App(){
 
     {
         id: 2,
-        img: '',
+        img: './assets/img/samsung.jpg',
         title: 'Samsung Galaxy S26',
         price: 799,
         desc: 'Современный смартфон Samsung Galaxy S26 с ярким дисплеем, мощным процессором и качественной камерой.',
@@ -29,7 +29,7 @@ export default function App(){
 
     {
         id: 3,
-        img: '',
+        img: './assets/img/theNothFace.jpg',
         title: 'The North Face 800 Jacket',
         price: 400,
         desc: 'Тёплая зимняя куртка The North Face с утеплителем 800-fill. Отличный вариант для холодной и влажной погоды.',
@@ -41,7 +41,7 @@ export default function App(){
 
     {
         id: 4,
-        img: '',
+        img: './assets/img/airpods.jpg',
         title: 'AirPods Pro 3',
         price: 250,
         desc: 'Беспроводные наушники Apple AirPods Pro 3 с активным шумоподавлением, качественным звуком и компактным дизайном.',
@@ -53,7 +53,7 @@ export default function App(){
 
     {
         id: 5,
-        img: '',
+        img: './assets/img/Jeans.jpg',
         title: 'Levi’s 501 Jeans',
         price: 160,
         desc: 'Классические джинсы Levi’s 501 с прямым кроем. Универсальная модель для повседневного образа.',
@@ -65,7 +65,7 @@ export default function App(){
 
     {
         id: 6,
-        img: '',
+        img: './assets/img/macbook.jpg',
         title: 'MacBook Air M5',
         price: 1200,
         desc: 'Тонкий и лёгкий MacBook Air с чипом Apple M5. Подходит для работы, учёбы, программирования и повседневных задач.',
