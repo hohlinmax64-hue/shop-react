@@ -1,23 +1,30 @@
 import { useState, useEffect } from "react"
 import ProductList from "./components/ProductList.jsx";
+import nikeImg from './assets/img/nike.jpg'
+import samsungImg from './assets/img/samsung.jpg'
+import jackeImg from './assets/img/theNothFace.jpg'
+import airPodsImg from './assets/img/airpods.jpg'
+import jeansImg from './assets/img/Jeans.jpg'
+import laptopImg from './assets/img/macbook.jpg'
+
 
 export default function App(){
   const [products, setProducts] = useState([
     {
-        id: 1,
-        img: '',
-        title: 'Nike P-6000',
-        price: 120,
-        desc: 'Стильные и удобные кроссовки Nike P-6000 с ретро-дизайном. Подходят для повседневной носки и активного образа жизни.',
-        category: 'Shoes',
-        brand: 'Nike',
-        rating: 4.7,
+        id: 1, 
+        img: nikeImg, 
+        title: 'Nike P-6000', 
+        price: 120, 
+        desc: 'Стильные и удобные кроссовки Nike P-6000 с ретро-дизайном. Подходят для повседневной носки и активного образа жизни.', 
+        category: 'Shoes', 
+        brand: 'Nike', 
+        rating: 4.7, 
         stock: 15
     },
 
     {
         id: 2,
-        img: '',
+        img: samsungImg,
         title: 'Samsung Galaxy S26',
         price: 799,
         desc: 'Современный смартфон Samsung Galaxy S26 с ярким дисплеем, мощным процессором и качественной камерой.',
@@ -29,7 +36,7 @@ export default function App(){
 
     {
         id: 3,
-        img: '',
+        img: jackeImg,
         title: 'The North Face 800 Jacket',
         price: 400,
         desc: 'Тёплая зимняя куртка The North Face с утеплителем 800-fill. Отличный вариант для холодной и влажной погоды.',
@@ -41,7 +48,7 @@ export default function App(){
 
     {
         id: 4,
-        img: '',
+        img: airPodsImg,
         title: 'AirPods Pro 3',
         price: 250,
         desc: 'Беспроводные наушники Apple AirPods Pro 3 с активным шумоподавлением, качественным звуком и компактным дизайном.',
@@ -53,7 +60,7 @@ export default function App(){
 
     {
         id: 5,
-        img: '',
+        img: jeansImg,
         title: 'Levi’s 501 Jeans',
         price: 160,
         desc: 'Классические джинсы Levi’s 501 с прямым кроем. Универсальная модель для повседневного образа.',
@@ -65,7 +72,7 @@ export default function App(){
 
     {
         id: 6,
-        img: '',
+        img: laptopImg,
         title: 'MacBook Air M5',
         price: 1200,
         desc: 'Тонкий и лёгкий MacBook Air с чипом Apple M5. Подходит для работы, учёбы, программирования и повседневных задач.',
@@ -75,6 +82,7 @@ export default function App(){
         stock: 7
     }
   ])
+  
   return (
     <div>
       <ProductList products={products}/>
