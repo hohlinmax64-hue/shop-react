@@ -3,14 +3,14 @@ import Search from './Search.jsx'
 
 export default function Header(){
     return (
-        <header>
-            <h2>Logo</h2>
+        <header className='header'>
+            <h2 className='header-logo'>Logo</h2>
             <Search />
             
             <div className='header-pages'>
-                <Link to='/'>Home</Link>
-                <Link to='/Cart'>Cart</Link>
-                <Link to='/Favorites'>Favorites</Link>
+                <Link className='pages' to='/'>Home</Link>
+                <Link className='pages' to='/Cart'>Cart</Link>
+                <Link className='pages' to='/Favorites'>Favorites</Link>
             </div>
         </header>
     )
