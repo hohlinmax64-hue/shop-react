@@ -75,6 +75,7 @@ export default function App(){
         stock: 7
     }
   ])
+  
   return (
     <div>
       <ProductList products={products}/>
