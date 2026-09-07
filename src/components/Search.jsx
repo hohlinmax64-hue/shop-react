@@ -1,7 +1,7 @@
 export default function Search(){
     return (
         <>
-            <input type="text" placeholder="поиск товаров"/>
+            <input className="input" type="text" placeholder="поиск товаров"/>
         </>
     )
 }
