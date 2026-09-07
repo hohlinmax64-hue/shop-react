@@ -8,5 +8,5 @@ export default function FilterProducts({selected ,setSelected}){
             </select>
         </>
     )
-
+>>>>>>> featur/filterProducts
 }
