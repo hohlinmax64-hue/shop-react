@@ -23,7 +23,7 @@ export default function App(){
         title: 'Nike P-6000', 
         price: 120, 
         desc: 'Стильные и удобные кроссовки Nike P-6000 с ретро-дизайном. Подходят для повседневной носки и активного образа жизни.', 
-        category: 'Shoes', 
+        category: 'Clothing', 
         brand: 'Nike', 
         rating: 4.7, 
         stock: 15
@@ -89,13 +89,24 @@ export default function App(){
         stock: 7
     }
   ])
+  const [selected, setSelected] = useState('All')
+
+  function filter(products){
+    let value = products.filter(item => {
+      if(selected === item.category) return true
+      if(selected === 'All') return true
+
+      return false
+    })
+    return value
+  }
   
   return (
     <>
-      <Header />
+      <Header selected={selected} setSelected={setSelected}/>
 
     <Routes>
-      <Route path='/' element={<Home products={products} />}/>
+      <Route path='/' element={<Home products={filter(products)}/>}/>
       <Route path='/Cart' element={<Cart />}/>
       <Route path='/Favorites' element={<Favorites />}/>
     </Routes> 
