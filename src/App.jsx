@@ -90,6 +90,7 @@ export default function App(){
     }
   ])
   const [selected, setSelected] = useState('All')
+  const [input, setInput] = useState('')
 
   function filter(products){
     let value = products.filter(item => {
@@ -100,13 +101,38 @@ export default function App(){
     })
     return value
   }
+
+  function seachFilterProducts(input, products){
+    if(!input){
+      return products
+    }
+    let searchProduct =  products.filter(({title}) => {
+      return title.toLowerCase().includes(input.toLowerCase())
+    })
+    return searchProduct
+  }
   
+  useEffect(() => {
+    let debounc = setTimeout(() => {
+      seachFilterProducts(input, products)
+    }, 300)
+
+    return () => {
+      clearTimeout(debounc)
+    }
+  }, [input])
+
   return (
     <>
-      <Header selected={selected} setSelected={setSelected}/>
+      <Header 
+      selected={selected} 
+      setSelected={setSelected} 
+      input={input} 
+      setInput={setInput}/>
 
     <Routes>
-      <Route path='/' element={<Home products={filter(products)}/>}/>
+      <Route path='/' 
+      element={<Home products={seachFilterProducts(input, filter(products))}/>}/>
       <Route path='/Cart' element={<Cart />}/>
       <Route path='/Favorites' element={<Favorites />}/>
     </Routes> 
