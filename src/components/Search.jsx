@@ -1,7 +1,7 @@
-export default function Search(){
+export default function Search({input, setInput}){
     return (
         <>
-            <input className="input" type="text" placeholder="поиск товаров"/>
+            <input value={input} onChange={(e) => setInput(e.target.value)} className="input" type="text" placeholder="поиск товаров"/>
         </>
     )
 }
