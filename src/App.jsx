@@ -16,7 +16,7 @@ import jeansImg from './assets/img/Jeans.jpg'
 import laptopImg from './assets/img/macbook.jpg'
 
 export default function App(){
-  const [products, setProducts] = useState([
+    const [products, setProducts] = useState([
     {
         id: 1, 
         img: nikeImg, 
@@ -89,50 +89,66 @@ export default function App(){
         stock: 7
     }
   ])
-  const [selected, setSelected] = useState('All')
-  const [input, setInput] = useState('')
+    const [selected, setSelected] = useState('All')
+    const [input, setInput] = useState('')
+    const [sortPrise, setSortPrise] = useState('default')
 
-  function filter(products){
-    let value = products.filter(item => {
-      if(selected === item.category) return true
-      if(selected === 'All') return true
+        function handleFilter(products){
+            let value = products.filter(item => {
+                if(selected === item.category) return true
+                if(selected === 'All') return true
 
-      return false
-    })
-    return value
-  }
+                return false
+            })
+            return value
+        }
+        function handleSearch(input, products){
+            if(!input){
+                return products
+            }
+            let searchProducts = products.filter(({title}) => {
+                    return title.toLowerCase().includes(input.toLowerCase())
+                })
+            return searchProducts
+        }
 
-  function seachFilterProducts(input, products){
-    if(!input){
-      return products
-    }
-    let searchProduct =  products.filter(({title}) => {
-      return title.toLowerCase().includes(input.toLowerCase())
-    })
-    return searchProduct
-  }
+        function handleSort(products){
+            if(sortPrise === 'default') return products
+            if(sortPrise === 'min') {
+                return [...products].sort((a, b) => a.price - b.price)
+            }
+            if(sortPrise === 'max') {
+                return [...products].sort((a, b) => b.price - a.price)
+            }
+        }
   
-  useEffect(() => {
-    let debounc = setTimeout(() => {
-      seachFilterProducts(input, products)
-    }, 300)
+        useEffect(() => {
+            let debounc = setTimeout(() => {
+            handleSearch(input, products)
+        }, 500)
 
-    return () => {
-      clearTimeout(debounc)
-    }
-  }, [input])
+            return () => {
+                clearTimeout(debounc)
+            }
+        }, [input])
 
+        const filteredProducts = handleFilter(products)
+        const searchedProducts = handleSearch(input, filteredProducts);
+        const finalProducts = handleSort(searchedProducts)
   return (
     <>
       <Header 
       selected={selected} 
       setSelected={setSelected} 
       input={input} 
-      setInput={setInput}/>
+      setInput={setInput}
+      sortPrice={sortPrise}
+      setSortPrice={setSortPrise}/>
 
     <Routes>
       <Route path='/' 
-      element={<Home products={seachFilterProducts(input, filter(products))}/>}/>
+      element={
+          <Home products={finalProducts}/>}/>
       <Route path='/Cart' element={<Cart />}/>
       <Route path='/Favorites' element={<Favorites />}/>
     </Routes> 
