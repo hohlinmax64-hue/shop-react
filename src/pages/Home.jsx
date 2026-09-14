@@ -1,9 +1,9 @@
 import ProductList from "../components/ProductList.jsx"
 
-export default function Home({products}){
+export default function Home({products, addToCart}) {
     return (
         <div>
-            <ProductList products={products}/>
+            <ProductList products={products} addToCart={addToCart}/>
         </div>
     )
 }
