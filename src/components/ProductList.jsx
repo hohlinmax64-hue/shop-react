@@ -1,9 +1,9 @@
 import ProductCard from "./ProductCard.jsx"
 
-export default function ProductList({products}) {
+export default function ProductList({products, addToCart}) {
     return (
         <div className="products-cards">
-            <ProductCard card={products}/>
+            <ProductCard products={products} addToCart={addToCart}/>
         </div>
         
     )    

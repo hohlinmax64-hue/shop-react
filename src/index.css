@@ -24,7 +24,7 @@ body {
 }
 
 .input {
-    width: 33%;
+    width: 50%;
     height: 20px;
     border-radius: 8px;
     padding: 10px;
@@ -36,6 +36,54 @@ body {
     outline: none;
 }
 
+.header-forms {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-sorts {
+    display: flex;
+    gap: 20px;
+}
+
+.filter-price,
+.filter-category {
+    min-width: 180px;
+    padding: 10px 38px 10px 14px;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+
+    cursor: pointer;
+    outline: none;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.filter-price:hover,
+.filter-category:hover {
+    border-color: #999;
+}
+
+.filter-price:focus,
+.filter-category:focus {
+    border-color: #555;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.filter-price-item,
+.category-item {
+    padding: 8px;
+    font-size: 15px;
+}
 
 .header-pages {
     display: flex;
@@ -76,10 +124,12 @@ img {
     border: 1px solid rgb(63, 63, 63);
     border-radius: 12px;
     margin: 10px;
+    background-color: #ededed;
 }
 
 .card img {
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card-text {
@@ -106,7 +156,7 @@ img {
     font-weight: 600;
 }
 
-.btn-addToCart {
+.btn {
     margin-top: 10px;
     cursor: pointer;
     font-size: 20px;
@@ -119,6 +169,6 @@ img {
     transition: all 0.3s;
 }
 
-.btn-addToCart:hover {
+.btn:hover {
     background-color: rgb(255, 53, 53);
 }

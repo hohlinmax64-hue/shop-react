@@ -92,6 +92,17 @@ export default function App(){
     const [selected, setSelected] = useState('All')
     const [input, setInput] = useState('')
     const [sortPrise, setSortPrise] = useState('default')
+    const [cart, setCart] = useState([])
+
+        function addToCart(product){
+            setCart(prev => [...prev, {product, cartId: crypto.randomUUID()}])
+            product.stock = product.stock - 1
+        }
+
+        function removeFromCart(cartId){
+            setCart(prev =>
+                prev.filter(item => item.cartId !== cartId))
+        }
 
         function handleFilter(products){
             let value = products.filter(item => {
@@ -148,8 +159,8 @@ export default function App(){
     <Routes>
       <Route path='/' 
       element={
-          <Home products={finalProducts}/>}/>
-      <Route path='/Cart' element={<Cart />}/>
+          <Home products={finalProducts} addToCart={addToCart}/>}/>
+      <Route path='/Cart' element={<Cart productsCart={cart} removeFromCart={removeFromCart}/>}/>
       <Route path='/Favorites' element={<Favorites />}/>
     </Routes> 
     </>
